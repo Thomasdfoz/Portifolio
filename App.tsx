@@ -11,7 +11,7 @@ import ContactPage from './pages/ContactPage';
 function App(): React.JSX.Element {
   return (
     <HashRouter>
-      <div className="bg-white text-gray-800 min-h-screen font-sans flex flex-col">
+      <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen font-sans flex flex-col transition-colors duration-300">
         <Navbar />
         <main className="flex-grow">
           <Routes>
