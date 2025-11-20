@@ -1,0 +1,229 @@
+{
+    "profile": {
+        "name": "Thomas",
+        "role": "Unity Gameplay Engineer & C# Systems Developer",
+        "headline": "Game Engineering, Systems, AI, and Interactive Experiences.",
+        "about": [
+            "I specialize in game development with Unity, creating gameplay, simulations, and modular systems in C#. I also work with AI to generate content and unique experiences.",
+            "I have experience in real-world projects, from jams to training simulators, always striving to deliver clean code, scalable architectures, and tools that can be used in the real world.",
+            "Additionally, I am interested in social and visual interactions, rapid prototyping, and continuous learning through building varied projects."
+        ],
+        "avatarUrl": "https://i.imgur.com/l2RnGUv.jpeg",
+        "social": {
+            "github": "https://github.com/Thomasdfoz",
+            "linkedin": "https://www.linkedin.com/in/thomasprogrammer/",
+            "itchio": "https://thomasdfoz.itch.io/"
+        }
+    },
+    "skills": {
+        "Game Development": [
+            "Unity (C#)",
+            "Gameplay Systems",
+            "Simulation",
+            "Multiplayer",
+            "Tool Pipelines",
+            "Editor Extensions"
+        ],
+        "Backend & Services": [
+            "ASP.NET Core",
+            "REST APIs",
+            "Firebase / Supabase",
+            "Persistence Systems"
+        ],
+        "AI & Systems": [
+            "AI Integrations",
+            "Content Generation",
+            "AI for Images / Selfies",
+            "Events and Clean Architecture"
+        ],
+        "Design & UX": [
+            "Game UI",
+            "Prototyping",
+            "Game Feel",
+            "Mission and Flow Design"
+        ]
+    },
+    "projects": [
+        {
+            "id": "2",
+            "title": "Battle of Herone",
+            "year": 2025,
+            "tags": [
+                "Game",
+                "Multiplayer",
+                "Steam"
+            ],
+            "imageUrl": "https://i.imgur.com/vMBkXXM.png",
+            "description": "Strategy game with card system and tactical battles, published on Steam. All gameplay, unit system, cards, progression, and battle logic were developed from scratch, with asynchronous multiplayer based on API and database.",
+            "longDescription": "Battle of Herone is a strategy game focused on tactical battles using cards to summon units and control the field. The entire project was created entirely by me: gameplay, card system, battle logic, economy, UI, maps, procedural art, internal tools, and Steam integration.\n\nThe multiplayer model is **asynchronous**, without real-time networking. Instead of direct connections between players, the game uses API + database to register states, send actions, process battle results, and maintain player progress. This format eliminates the need for dedicated servers and ensures fast, secure, and stable matches.\n\nTechnically, the project includes:\n- Complete card system (cost, rarity, attributes, effects, archetypes).\n- Fully original combat mechanics, with unit AI, movement, range, and target prioritization.\n- Deck management, progression, economy, and rewards.\n- Asynchronous backend via API, match control, result storage, and data persistence.\n- Internal tools in Unity for creating and balancing units.\n- Complete publication on Steamworks.\n\nIn my professional assessment, this project demonstrates total mastery of the essential layers of a commercial game: design, implementation, asynchronous multiplayer flow, content production, platform integration, and general stability. The natural next steps would be balancing telemetry, seasonal events, and content expansion (new factions, cards, and modes).",
+            "technologies": [
+                "Unity",
+                "C#",
+                "API",
+                "Supabase",
+                "Database",
+                "Steamworks"
+            ],
+            "galleryImages": [
+                "https://i.imgur.com/OgrmThJ.gif",
+                "https://i.imgur.com/aeG76qn.gif",
+                "https://i.imgur.com/QbdlmUo.gif",
+                "https://i.imgur.com/T1E08sM.gif"
+            ],
+            "projectUrl": "https://store.steampowered.com/app/4015690/Battle_of_Herone/"
+        },
+        {
+            "id": "3",
+            "title": "Forklift Simulator",
+            "year": 2026,
+            "tags": [
+                "Simulation",
+                "Training",
+                "Unity"
+            ],
+            "imageUrl": "https://i.imgur.com/nnXtXAr.jpeg",
+            "description": "Realistic simulator for forklift operator training.",
+            "longDescription": "I developed a forklift simulator to train operators in a safe virtual environment. The system simulates realistic physics, forklift control, collisions, and load handling tasks. This project is aimed at corporate and educational training.",
+            "technologies": [
+                "Unity",
+                "C#",
+                "Multiplayer",
+                "Networking"
+            ],
+            "galleryImages": [
+                "https://i.imgur.com/gzNdzKD.jpeg"
+            ],
+            "projectUrl": ""
+        },
+        {
+            "id": "5",
+            "title": "Mists of Krakovia: The Great Collapse",
+            "year": 2025,
+            "tags": [
+                "Jam",
+                "MMORPG"
+            ],
+            "imageUrl": "https://i.imgur.com/bcpl1UP.jpeg",
+            "description": "MMORPG created in 1 month as part of a game jam.",
+            "longDescription": "During a game jam, we developed Mists of Krakovia: The Great Collapse, an MMORPG with open-world mechanics, combat, and progression. The speed of the project required efficient design, rapid prototyping, and extensible architecture, and allowed exploring mission systems, inventory, and networking on a reduced scale.",
+            "technologies": [
+                "Unity",
+                "C#",
+                "Multiplayer"
+            ],
+            "galleryImages": [
+                "https://i.imgur.com/viLkJeZ.jpeg",
+                "https://i.imgur.com/TR2dEuy.jpeg",
+                "https://i.imgur.com/R29erY9.jpeg"
+            ],
+            "projectUrl": ""
+        },
+        {
+            "id": "6",
+            "title": "Launcher — Mists of Krakovia",
+            "year": 2025,
+            "tags": [
+                "Launcher",
+                "Updater",
+                "Unity",
+                "UI Toolkit"
+            ],
+            "imageUrl": "https://i.imgur.com/WXfNO2f.jpeg",
+            "description": "Professional launcher developed in Unity with UI Toolkit, responsible for automatically downloading and updating the latest version of the MMORPG Mists of Krakovia.",
+            "longDescription": "This launcher was created to manage the entire update flow of Mists of Krakovia. Built in Unity using UI Toolkit, it connects to files hosted on GitHub Pages to check for the latest client version, download updates, apply patches, and ensure the player always has the most up-to-date version. The system includes automatic version checking, download with progress bar, file validation, extraction, and safe replacement of game data, inspired by the experience of professional MMORPG launchers like Albion and WoW.",
+            "features": [
+                "Interface built with Unity UI Toolkit",
+                "Automatic version checking using manifest.json hosted on GitHub Pages",
+                "Game update download directly from GitHub Pages",
+                "Visual progress system with download and verification status",
+                "Integrity validation of downloaded files",
+                "Automatic extraction and update of the game client",
+                "Fallback for complete reinstallation if the current patch fails",
+                "Design inspired by major MMORPG launchers"
+            ],
+            "technologies": [
+                "Unity",
+                "C#",
+                "UI Toolkit",
+                "GitHub Pages (Hosting versions and manifests)",
+                "GitHub Releases (for builds)"
+            ],
+            "galleryImages": [
+                ""
+            ]
+        },
+        {
+            "id": "7",
+            "title": "POS - Point of Sale",
+            "year": 2025,
+            "tags": [
+                "WebApp",
+                "React",
+                "Supabase"
+            ],
+            "imageUrl": "https://i.imgur.com/Kbw77E9.png",
+            "description": "POS system developed to explore and validate modern frontend and backend practices using React, Supabase, and Tailwind. The project simulates a complete point of sale with authentication, product registration, and optimized operational flow.",
+            "longDescription": "This project was created with the objective of reproducing a functional Point of Sale (POS), applying in practice modern technologies that I consider essential for building fast, robust, and scalable web applications. On the frontend, I used React with Vite to ensure excellent performance and a clear modular structure. With TailwindCSS, I developed a clean, responsive, and easy-to-evolve interface. On the backend, Supabase was chosen for the combination of PostgreSQL, authentication, and real-time APIs, which allowed quickly implementing the complete POS flow — including login, product management, and sales structure. This project serves as a solid proof of concept, demonstrating how to integrate these tools efficiently while maintaining a clean architecture, ready for future expansions like inventory control, administrative dashboards, and integrations with physical devices.",
+            "technologies": [
+                "React",
+                "Supabase",
+                "Tailwind",
+                "TypeScript",
+                "Vite"
+            ],
+            "galleryImages": [
+                "https://i.imgur.com/4axDv1d.png",
+                "https://i.imgur.com/ZJ8ufdQ.png",
+                "https://i.imgur.com/3zL7Ude.png"
+            ],
+            "projectUrl": "https://thomasdfoz.github.io/pdv-moderno/"
+        }
+    ],
+    "contact": {
+        "title": "Let's Talk",
+        "description": "If you are thinking about a game project, simulation, or AI, or just want to exchange an idea, I am at your disposal!",
+        "email": "eletronicgamesstudio@gmail.com",
+        "phone": "+55 45 99151-7779",
+        "location": "Foz do Iguaçu, Brazil",
+        "infoTitle": "Contact Information",
+        "emailLabel": "Email",
+        "phoneLabel": "Phone",
+        "locationLabel": "Location",
+        "form": {
+            "nameLabel": "Name",
+            "namePlaceholder": "Your name",
+            "emailLabel": "Email",
+            "emailPlaceholder": "your@email.com",
+            "messageLabel": "Message",
+            "messagePlaceholder": "Your message...",
+            "whatsappButton": "WhatsApp",
+            "emailButton": "Email",
+            "whatsappMessage": "Hello, my name is {name}. My email is {email}. {message}",
+            "emailSubject": "Contact from Portfolio by {name}",
+            "emailBody": "Name: {name}\\r\\nEmail: {email}\\r\\n\\r\\nMessage:\\r\\n{message}"
+        }
+    },
+    "navbar": {
+        "about": "About",
+        "work": "Work",
+        "contact": "Contact"
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    },
+    "home": {
+        "title": "My Work",
+        "description": "Projects that translate my passion for technology and my dedication to building robust and engaging solutions."
+    },
+    "labels": {
+        "skills": "Skills",
+        "viewProjects": "View Projects",
+        "projectNotFound": "Project not found",
+        "backToWork": "Back to work",
+        "back": "Back",
+        "technologies": "Technologies Used",
+        "viewProject": "View Project",
+        "viewProjectDetails": "View project details",
+        "projectImage": "Project image"
+    }
+}

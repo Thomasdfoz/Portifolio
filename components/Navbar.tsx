@@ -3,12 +3,15 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
-import { profile } from '../constants';
+import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { data } = useLanguage();
+  const { profile, navbar } = data;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,16 +26,16 @@ const Navbar: React.FC = () => {
   }, [location]);
 
   const navLinks = [
-    { path: '/', label: 'Sobre' },
-    { path: '/trabalhos', label: 'Trabalhos' },
-    { path: '/contact', label: 'Contato' },
+    { path: '/', label: navbar.about },
+    { path: '/trabalhos', label: navbar.work },
+    { path: '/contact', label: navbar.contact },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm border-b border-gray-200/50 dark:border-gray-800/50 py-2'
-          : 'bg-transparent py-4'
+        ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm border-b border-gray-200/50 dark:border-gray-800/50 py-2'
+        : 'bg-transparent py-4'
         }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,13 +78,15 @@ const Navbar: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <div className="pl-6 border-l border-gray-200 dark:border-gray-700">
+            <div className="pl-6 border-l border-gray-200 dark:border-gray-700 flex items-center gap-4">
+              <LanguageSelector />
               <ThemeToggle />
             </div>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center md:hidden gap-4">
+            <LanguageSelector />
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}

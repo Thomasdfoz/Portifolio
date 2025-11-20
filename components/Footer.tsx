@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Github, Linkedin, Gamepad2 } from 'lucide-react';
-import { profile } from '../constants';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
+  const { data } = useLanguage();
+  const { profile, footer } = data;
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +48,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              &copy; {new Date().getFullYear()} {profile.name}. Todos os direitos reservados.
+              &copy; {new Date().getFullYear()} {profile.name}. {footer.rights}
             </p>
           </div>
         </div>

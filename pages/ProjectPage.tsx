@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Tag, ExternalLink, Github } from 'lucide-react';
-import { projects } from '../constants';
+import { useLanguage } from '../contexts/LanguageContext';
 import ImageModal from '../components/ImageModal';
 
 const ProjectPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { data } = useLanguage();
+  const { projects } = data;
   const project = projects.find(p => p.id === id);
 
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
@@ -16,9 +18,9 @@ const ProjectPage: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Projeto não encontrado</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{data.labels.projectNotFound}</h2>
           <Link to="/trabalhos" className="mt-4 inline-block text-indigo-600 hover:text-indigo-500">
-            Voltar para trabalhos
+            {data.labels.backToWork}
           </Link>
         </div>
       </div>
@@ -61,7 +63,7 @@ const ProjectPage: React.FC = () => {
         className="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 mb-8 transition-colors group"
       >
         <ArrowLeft className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
-        Voltar
+        {data.labels.back}
       </button>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -120,7 +122,7 @@ const ProjectPage: React.FC = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Tecnologias Utilizadas</h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">{data.labels.technologies}</h3>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map(tech => (
                 <span key={tech} className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium border border-indigo-100 dark:border-indigo-800">
@@ -139,7 +141,7 @@ const ProjectPage: React.FC = () => {
                 className="inline-flex items-center px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 <ExternalLink className="w-5 h-5 mr-2" />
-                Ver Projeto
+                {data.labels.viewProject}
               </a>
             </div>
           )}
@@ -161,4 +163,3 @@ const ProjectPage: React.FC = () => {
 };
 
 export default ProjectPage;
-

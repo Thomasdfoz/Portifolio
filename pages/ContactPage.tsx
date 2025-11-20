@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Send, MapPin } from 'lucide-react';
-import { contact } from '../constants';
+import { Mail, Phone, MapPin } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ContactPage: React.FC = () => {
+  const { data } = useLanguage();
+  const { contact } = data;
+  const { form } = contact;
+
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -52,12 +56,12 @@ const ContactPage: React.FC = () => {
             transition={{ delay: 0.4 }}
             className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Informações de Contato</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">{contact.infoTitle}</h3>
             <div className="space-y-6">
               <div className="flex items-start">
                 <Mail className="w-6 h-6 text-indigo-500 mt-1 mr-4" />
                 <div>
-                  <p className="font-medium text-gray-900 dark:text-gray-100">Email</p>
+                  <p className="font-medium text-gray-900 dark:text-gray-100">{contact.emailLabel}</p>
                   <a href={`mailto:${contact.email}`} className="text-gray-600 dark:text-gray-400 hover:text-indigo-500 transition-colors">
                     {contact.email}
                   </a>
@@ -67,7 +71,7 @@ const ContactPage: React.FC = () => {
                 <div className="flex items-start">
                   <Phone className="w-6 h-6 text-indigo-500 mt-1 mr-4" />
                   <div>
-                    <p className="font-medium text-gray-900 dark:text-gray-100">Telefone</p>
+                    <p className="font-medium text-gray-900 dark:text-gray-100">{contact.phoneLabel}</p>
                     <p className="text-gray-600 dark:text-gray-400">{contact.phone}</p>
                   </div>
                 </div>
@@ -75,7 +79,7 @@ const ContactPage: React.FC = () => {
               <div className="flex items-start">
                 <MapPin className="w-6 h-6 text-indigo-500 mt-1 mr-4" />
                 <div>
-                  <p className="font-medium text-gray-900 dark:text-gray-100">Localização</p>
+                  <p className="font-medium text-gray-900 dark:text-gray-100">{contact.locationLabel}</p>
                   <p className="text-gray-600 dark:text-gray-400">{contact.location}</p>
                 </div>
               </div>
@@ -91,7 +95,7 @@ const ContactPage: React.FC = () => {
             <form className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Nome
+                  {form.nameLabel}
                 </label>
                 <input
                   type="text"
@@ -101,12 +105,12 @@ const ContactPage: React.FC = () => {
                   value={formState.name}
                   onChange={handleChange}
                   className="block w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
-                  placeholder="Seu nome"
+                  placeholder={form.namePlaceholder}
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Email
+                  {form.emailLabel}
                 </label>
                 <input
                   type="email"
@@ -116,12 +120,12 @@ const ContactPage: React.FC = () => {
                   value={formState.email}
                   onChange={handleChange}
                   className="block w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
-                  placeholder="seu@email.com"
+                  placeholder={form.emailPlaceholder}
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Mensagem
+                  {form.messageLabel}
                 </label>
                 <textarea
                   name="message"
@@ -131,7 +135,7 @@ const ContactPage: React.FC = () => {
                   value={formState.message}
                   onChange={handleChange}
                   className="block w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow"
-                  placeholder="Sua mensagem..."
+                  placeholder={form.messagePlaceholder}
                 ></textarea>
               </div>
 
@@ -140,7 +144,10 @@ const ContactPage: React.FC = () => {
                   type="button"
                   onClick={() => {
                     const phoneNumber = contact.phone?.replace(/\D/g, '') || '';
-                    const text = `Olá, meu nome é ${formState.name}. Meu email é ${formState.email}. ${formState.message}`;
+                    const text = form.whatsappMessage
+                      .replace('{name}', formState.name)
+                      .replace('{email}', formState.email)
+                      .replace('{message}', formState.message);
                     const encodedText = encodeURIComponent(text);
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
                     window.open(whatsappUrl, '_blank');
@@ -149,21 +156,24 @@ const ContactPage: React.FC = () => {
                   className="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors shadow-md hover:shadow-lg"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  WhatsApp
+                  {form.whatsappButton}
                 </button>
                 <button
                   type="button"
                   onClick={() => {
-                    const subject = `Contato pelo Portfólio de ${formState.name}`;
-                    const body = `Nome: ${formState.name}%0D%0AEmail: ${formState.email}%0D%0A%0D%0AMensagem:%0D%0A${formState.message}`;
-                    const mailtoUrl = `mailto:${contact.email}?subject=${subject}&body=${body}`;
+                    const subject = form.emailSubject.replace('{name}', formState.name);
+                    const body = form.emailBody
+                      .replace('{name}', formState.name)
+                      .replace('{email}', formState.email)
+                      .replace('{message}', formState.message);
+                    const mailtoUrl = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                     window.location.href = mailtoUrl;
                     setFormState({ name: '', email: '', message: '' });
                   }}
                   className="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors shadow-md hover:shadow-lg"
                 >
                   <Mail className="w-5 h-5 mr-2" />
-                  Email
+                  {form.emailButton}
                 </button>
               </div>
             </form>

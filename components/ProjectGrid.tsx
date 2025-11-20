@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
-import { projects } from '../constants';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const container = {
   hidden: { opacity: 0 },
@@ -14,6 +14,9 @@ const container = {
 };
 
 const ProjectGrid: React.FC = () => {
+  const { data } = useLanguage();
+  const { projects } = data;
+
   return (
     <motion.div
       variants={container}

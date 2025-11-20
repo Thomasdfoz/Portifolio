@@ -184,6 +184,46 @@
         "description": "Se você está pensando em um projeto de jogo, simulação ou IA, ou quer apenas trocar uma ideia, estou à disposição!",
         "email": "eletronicgamesstudio@gmail.com",
         "phone": "+55 45 99151-7779",
-        "location": "Foz do Iguaçu, Brasil"
+        "location": "Foz do Iguaçu, Brasil",
+        "infoTitle": "Informações de Contato",
+        "emailLabel": "Email",
+        "phoneLabel": "Telefone",
+        "locationLabel": "Localização",
+        "form": {
+            "nameLabel": "Nome",
+            "namePlaceholder": "Seu nome",
+            "emailLabel": "Email",
+            "emailPlaceholder": "seu@email.com",
+            "messageLabel": "Mensagem",
+            "messagePlaceholder": "Sua mensagem...",
+            "whatsappButton": "WhatsApp",
+            "emailButton": "Email",
+            "whatsappMessage": "Olá, meu nome é {name}. Meu email é {email}. {message}",
+            "emailSubject": "Contato pelo Portfólio de {name}",
+            "emailBody": "Nome: {name}\\r\\nEmail: {email}\\r\\n\\r\\nMensagem:\\r\\n{message}"
+        }
+    },
+    "navbar": {
+        "about": "Sobre",
+        "work": "Trabalhos",
+        "contact": "Contato"
+    },
+    "footer": {
+        "rights": "Todos os direitos reservados."
+    },
+    "home": {
+        "title": "Meus Trabalhos",
+        "description": "Projetos que traduzem minha paixão por tecnologia e minha dedicação em construir soluções robustas e envolventes."
+    },
+    "labels": {
+        "skills": "Competências",
+        "viewProjects": "Ver Projetos",
+        "projectNotFound": "Projeto não encontrado",
+        "backToWork": "Voltar para trabalhos",
+        "back": "Voltar",
+        "technologies": "Tecnologias Utilizadas",
+        "viewProject": "Ver Projeto",
+        "viewProjectDetails": "Ver detalhes do projeto",
+        "projectImage": "Imagem do projeto"
     }
 }

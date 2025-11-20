@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code, PenTool, Terminal } from 'lucide-react';
-import { profile, skills } from '../constants';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const AboutPage: React.FC = () => {
+  const { data } = useLanguage();
+  const { profile, skills } = data;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -51,7 +53,7 @@ const AboutPage: React.FC = () => {
         <div className="mb-20">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8 flex items-center">
             <Terminal className="w-6 h-6 mr-2 text-indigo-500" />
-            Competências
+            {data.labels.skills}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {Object.entries(skills).map(([category, items], index) => (
@@ -86,7 +88,7 @@ const AboutPage: React.FC = () => {
             to="/trabalhos"
             className="inline-flex items-center px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full font-medium text-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
           >
-            Ver Projetos
+            {data.labels.viewProjects}
             <ArrowRight className="ml-2 w-5 h-5" />
           </Link>
         </div>

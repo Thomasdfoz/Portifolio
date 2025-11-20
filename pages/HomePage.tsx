@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectGrid from '../components/ProjectGrid';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const HomePage: React.FC = () => {
+  const { data } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,7 +21,7 @@ const HomePage: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 tracking-tight"
         >
-          Meus Trabalhos
+          {data.home.title}
         </motion.h1>
         <motion.p
           initial={{ y: 20, opacity: 0 }}
@@ -26,7 +29,7 @@ const HomePage: React.FC = () => {
           transition={{ delay: 0.3 }}
           className="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400"
         >
-          Projetos que traduzem minha paixão por tecnologia e minha dedicação em construir soluções robustas e envolventes.
+          {data.home.description}
         </motion.p>
       </div>
       <ProjectGrid />
