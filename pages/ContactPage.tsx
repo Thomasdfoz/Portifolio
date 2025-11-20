@@ -76,7 +76,7 @@ const ContactPage: React.FC = () => {
                 <MapPin className="w-6 h-6 text-indigo-500 mt-1 mr-4" />
                 <div>
                   <p className="font-medium text-gray-900 dark:text-gray-100">Localização</p>
-                  <p className="text-gray-600 dark:text-gray-400">São Paulo, Brasil</p>
+                  <p className="text-gray-600 dark:text-gray-400">Foz Do Iguaçu, Brasil</p>
                 </div>
               </div>
             </div>

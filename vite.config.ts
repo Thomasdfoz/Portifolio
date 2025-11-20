@@ -1,5 +1,6 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
+import { fileURLToPath } from 'url';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
@@ -7,7 +8,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   // use VITE_BASE if provided, otherwise fallback to '/portfolio/' (replace with repo name)
-  const basePath = env.VITE_BASE || '/portfolio/';
+  const basePath = env.VITE_BASE || '/Portifolio/';
 
   return {
     base: basePath, // IMPORTANT: change '/portfolio/' to '/<your-repo-name>/' or set VITE_BASE
@@ -24,7 +25,7 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.'),
       },
     },
     preview: {
