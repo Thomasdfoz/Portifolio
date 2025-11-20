@@ -1,15 +1,30 @@
-
 import React from 'react';
-import { PROJECTS } from '../constants';
+import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
+import { projects } from '../constants';
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 const ProjectGrid: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-      {PROJECTS.map(project => (
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+    >
+      {projects.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}
-    </div>
+    </motion.div>
   );
 };
 
