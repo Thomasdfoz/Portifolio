@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Tag, ExternalLink, Github } from 'lucide-react';
 import { projects } from '../constants';
+import ImageModal from '../components/ImageModal';
 
 const ProjectPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const project = projects.find(p => p.id === id);
+
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   if (!project) {
     return (
@@ -21,6 +24,29 @@ const ProjectPage: React.FC = () => {
       </div>
     );
   }
+
+  // Combinar imagem principal com galeria
+  const allImages = [project.imageUrl, ...project.galleryImages.filter(img => img)];
+
+  const handleImageClick = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const handleNextImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex < allImages.length - 1) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
+
+  const handlePreviousImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
 
   return (
     <motion.div
@@ -44,16 +70,23 @@ const ProjectPage: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <div className="rounded-2xl overflow-hidden shadow-xl mb-8 border border-gray-100 dark:border-gray-800">
+          <div
+            className="rounded-2xl overflow-hidden shadow-xl mb-8 border border-gray-100 dark:border-gray-800 cursor-pointer hover:shadow-2xl transition-shadow"
+            onClick={() => handleImageClick(0)}
+          >
             <img
               src={project.imageUrl}
               alt={project.title}
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
             {project.galleryImages.map((img, index) => (
-              <div key={index} className="rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-800">
+              <div
+                key={index}
+                className="rounded-xl overflow-hidden shadow-md border border-gray-100 dark:border-gray-800 cursor-pointer hover:shadow-lg transition-shadow"
+                onClick={() => handleImageClick(index + 1)}
+              >
                 <img src={img} alt={`Gallery ${index + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
@@ -112,8 +145,20 @@ const ProjectPage: React.FC = () => {
           )}
         </motion.div>
       </div>
+
+      {/* Modal de Imagem */}
+      {selectedImageIndex !== null && (
+        <ImageModal
+          images={allImages}
+          currentIndex={selectedImageIndex}
+          onClose={handleCloseModal}
+          onNext={handleNextImage}
+          onPrevious={handlePreviousImage}
+        />
+      )}
     </motion.div>
   );
 };
 
 export default ProjectPage;
+

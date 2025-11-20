@@ -54,8 +54,8 @@
                 "Steam"
             ],
             "imageUrl": "https://i.imgur.com/vMBkXXM.png",
-            "description": "Jogo multiplayer disponível na Steam, com batalhas intensas e mecânicas de estratégia.",
-            "longDescription": "Battle of Herone é um jogo multiplayer competitivo lançado na Steam. Foi projetado para proporcionar partidas rápidas, focadas em estratégia e combate entre jogadores. Trabalhei no gameplay, na arquitetura de rede e na modelagem de personagens, garantindo uma experiência fluida e envolvente.",
+            "description": "Jogo de cartas e estratégia multiplayer lançado na Steam. Desenvolvimento completo do gameplay, sistema de cartas, mecânicas de plataforma e arquitetura de rede, resultando em partidas rápidas, balanceadas e competitivas.",
+            "longDescription": "Battle of Herone é um jogo multiplayer competitivo focado em combates táticos usando um sistema de cartas. Desenvolvi o projeto de ponta a ponta: design e implementação do gameplay, criação e balanceamento do sistema de cartas, infraestrutura de plataforma, e toda a camada de rede até a publicação na Steam. O motor é Unity com C#, e o jogo foi desenhado para oferecer partidas curtas e estratégicas com ênfase em decisões posicionais e composição de deck.\n\nDo ponto de vista técnico, o projeto inclui:\n- Sistema de cartas modular, com dados de unidades, efeitos e gatilhos organizados para fácil extensão e balanceamento.\n- Pipeline de gameplay que integra spawn de unidades, lógica de combate, comportamento de IA básica e resoluções de turno/tempo real.\n- Arquitetura de rede para multiplayer (matchmaking, sincronização de estado e reprodução determinística/autoritativa) garantindo experiência fluida mesmo em partidas competitivas.\n- Ferramentas internas para debug e balanceamento (visualização de estados, simulações locais e ajustadores de parâmetros em runtime).\n- Otimizações de performance para manter estabilidade em mapas com múltiplas entidades e animações simultâneas.\n\nMinha avaliação profissional: o projeto demonstra maturidade técnica e cuidado arquitetural — especialmente por cobrir desde a concepção de sistemas (cards, fluxo de combate) até a publicação. Como próximos passos recomendaria instrumentação para coleta de métricas (telemetria de partidas e balanceamento), melhorias no matchmaking (ELO/skill-based), testes automatizados de regressão para regras de cartas e uma camada anti-cheat/validação de estado mais robusta se o jogo escalar para um público maior. No geral, um trabalho completo e bem estruturado, ótimo para portfólio e para evoluções futuras.",
             "technologies": [
                 "Unity",
                 "C#",
@@ -85,8 +85,8 @@
             "technologies": [
                 "Unity",
                 "C#",
-                "Física",
-                "Interação UX"
+                "Multiplayer",
+                "Networking"
             ],
             "galleryImages": [
                 "https://i.imgur.com/gzNdzKD.jpeg"
@@ -107,7 +107,6 @@
             "technologies": [
                 "Unity",
                 "C#",
-                "Sistema de Missões",
                 "Multiplayer"
             ],
             "galleryImages": [
