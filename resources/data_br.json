@@ -27,8 +27,7 @@
         "Backend & Serviços": [
             "ASP.NET Core",
             "REST APIs",
-            "Firebase / Supabase",
-            "Sistemas de Persistência"
+            "Firebase / Supabase"
         ],
         "IA & Sistemas": [
             "Integrações de IA",
