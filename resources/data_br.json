@@ -152,6 +152,35 @@
             ]
         },
         {
+            "id": "18",
+            "title": "Orbit - Gestão de Projetos e Equipes",
+            "year": 2026,
+            "tags": [
+                "WebApp",
+                "React",
+                "Tailwind",
+                "SaaS"
+            ],
+            "imageUrl": "https://i.imgur.com/5tgCOxz.png",
+            "description": "Um dashboard SaaS completo para gestão de projetos e rastreamento de tempo. Atualmente em desenvolvimento, conta com quadros Kanban interativos, CRM de clientes e análises detalhadas de produtividade.",
+            "longDescription": "O TimeFlow é um projeto ambicioso atualmente em desenvolvimento (previsto para 2026), projetado para resolver a fragmentação de ferramentas de produtividade. O objetivo é construir uma plataforma unificada onde agências possam gerenciar tarefas, rastrear horas faturáveis e organizar dados de clientes em um só lugar. A aplicação utiliza uma stack moderna com React e Tailwind CSS para entregar uma interface 'Dark Mode' responsiva e visualmente impactante. As principais funcionalidades em implementação incluem um quadro Kanban com drag-and-drop, análises de dashboard em tempo real para acompanhamento de carga de trabalho e um sistema integrado de timesheet. Este projeto demonstra gerenciamento de estado avançado no frontend e uma arquitetura complexa de componentes de UI.",
+            "technologies": [
+                "React",
+                "Tailwind",
+                "TypeScript",
+                "Vite",
+                "Recharts"
+            ],
+            "galleryImages": [
+                "https://i.imgur.com/Bz4ujcK.png",
+                "https://i.imgur.com/r7vM1JD.png",
+                "https://i.imgur.com/fA1aSWl.png",
+                "https://i.imgur.com/JgnxbaH.png",
+                "https://i.imgur.com/WTzXsAt.png"
+            ],
+            "projectUrl": "Em Desenvolvimento"
+        },
+        {
             "id": "7",
             "title": "PDV - Ponto de Venda",
             "year": 2025,
