@@ -163,7 +163,7 @@
             ],
             "imageUrl": "https://i.imgur.com/5tgCOxz.png",
             "description": "A comprehensive SaaS dashboard for project management and time tracking. Currently in development, it features interactive Kanban boards, client CRM, and detailed productivity analytics.",
-            "longDescription": "TimeFlow is an ambitious project currently under development (targeted for 2026) designed to solve the fragmentation of productivity tools. The goal is to build a unified platform where agencies can manage tasks, track billable hours, and organize client data in one place. The application utilizes a modern stack with React and Tailwind CSS to deliver a responsive and visually striking 'Dark Mode' interface. Key features being implemented include a drag-and-drop Kanban board, real-time dashboard analytics for workload tracking, and an integrated timesheet system. This project showcases advanced frontend state management and complex UI component architecture.",
+            "longDescription": "Orbit is an ambitious project currently under development (targeted for 2026) designed to solve the fragmentation of productivity tools. The goal is to build a unified platform where agencies can manage tasks, track billable hours, and organize client data in one place. The application utilizes a modern stack with React and Tailwind CSS to deliver a responsive and visually striking 'Dark Mode' interface. Key features being implemented include a drag-and-drop Kanban board, real-time dashboard analytics for workload tracking, and an integrated timesheet system. This project showcases advanced frontend state management and complex UI component architecture.",
             "technologies": [
                 "React",
                 "Tailwind",
@@ -177,8 +177,7 @@
                 "https://i.imgur.com/fA1aSWl.png",
                 "https://i.imgur.com/JgnxbaH.png",
                 "https://i.imgur.com/WTzXsAt.png"
-            ],
-            "projectUrl": "In Development"
+            ]
         },
         {
             "id": "7",
