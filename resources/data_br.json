@@ -204,6 +204,36 @@
                 "https://i.imgur.com/3zL7Ude.png"
             ],
             "projectUrl": "https://thomasdfoz.github.io/pdv-moderno/"
+        },
+        {
+            "id": "19",
+            "title": "DreamSelfie - AI Avatar Generator",
+            "year": 2025,
+            "tags": [
+                "WebApp",
+                "React",
+                "Tailwind",
+                "AI Integration",
+                "Mobile First"
+            ],
+            "imageUrl": "https://i.imgur.com/nOmvxf6.png",
+            "description": "Uma plataforma interativa que utiliza Inteligência Artificial Generativa para transformar selfies em avatares estilizados (Cyberpunk, 3D, Retrô), com uma interface moderna e imersiva.",
+            "longDescription": "O DreamSelfie é uma aplicação desenvolvida para democratizar o acesso à arte gerada por IA através de uma UX simplificada e visualmente impactante. O projeto foca em uma experiência 'Mobile-First', guiando o usuário por um fluxo intuitivo: upload de foto, seleção de estilo artístico (como '80s Retro', 'Action Figure', 'Clay Animation') e geração de imagem. A interface utiliza uma paleta de cores neon e dark mode para criar uma atmosfera futurista. Por trás da interface fluida construída em React e Tailwind, a aplicação integra APIs de modelos de difusão (Stable Diffusion/Midjourney) para processar as transformações em tempo real, demonstrando competência em integração de APIs complexas e design de interfaces responsivas.",
+            "technologies": [
+                "React",
+                "Tailwind CSS",
+                "Stable Diffusion API",
+                "Vite",
+                "Framer Motion"
+            ],
+            "galleryImages": [
+                "https://i.imgur.com/t8KB1pk.png",
+                "https://i.imgur.com/F6pORxF.png",
+                "https://i.imgur.com/lR7f3QL.png",
+                "https://i.imgur.com/jYlHdnN.png",
+                "https://i.imgur.com/mYgKApf.png",
+                "https://i.imgur.com/2xIYqx7.png"
+            ]
         }
     ],
     "contact": {
